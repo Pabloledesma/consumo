@@ -1,0 +1,25 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal">Estimado(a) {!Opportunity.Name}<o:p></o:p></p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Hemos intentado comunicarnos contigo para continuar con tu
+proceso de solicitud de crédito de seguro educativo sin encontrar respuesta.<o:p></o:p></p>
+
+<p class="MsoNormal">Por favor comunícate lo antes posible con&nbsp;<o:p></o:p></p><p class="MsoNormal"><br></p>
+
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><p class="MsoNormal">Asesor:&nbsp;{!Opportunity.OwnerFullName}</p><p class="MsoNormal">Telefono:&nbsp;{!Opportunity.OwnerPhone}</p><p class="MsoNormal">WhatsApp:&nbsp;{!Opportunity.Owner_movil__c}</p><p class="MsoNormal">Email:&nbsp;{!Opportunity.OwnerEmail}</p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p></blockquote><span style="font-size: 12pt;">Saludos,</span><br><span style="font-size: 12pt;">Credifamilia compañía de financiamiento S.A.</span><br><p class="MsoNormal"><a href="http://www.credifamilia.com/">WWW.CREDIFAMILIA.COM</a></p><p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+<p class="MsoNormal"><o:p></o:p></p>]]></td>
+</tr>
+</table>

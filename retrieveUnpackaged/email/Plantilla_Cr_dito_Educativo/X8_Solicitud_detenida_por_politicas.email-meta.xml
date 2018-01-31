@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Carta_aprobacion_de_cupo</letterhead>
+    <name>8. Solicitud detenida por politicas</name>
+    <style>freeForm</style>
+    <subject>Credifamilia responde a tu solicitud de crédito</subject>
+    <textOnly>Hola {!Opportunity.Name},
+
+
+
+Queremos recordarte que tu asesor se estará comunicando contigo en la fecha acordada, ya que en el momento no cumples con alguna condición necesaria para acceder al crédito.
+
+
+Para cualquier inquietud comunícate con:
+
+
+
+
+
+Asesor: {!Opportunity.OwnerFullName}
+
+Teléfono: {!Opportunity.OwnerPhone}
+
+WathsApp: {!Opportunity.Owner_movil__c}
+
+Correo electrónico:
+
+
+
+
+
+Saludos,
+
+
+
+
+
+Credifamilia Compañía de Financiamiento S.A.
+
+www.credifamilia.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

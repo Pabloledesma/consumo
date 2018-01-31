@@ -1,0 +1,21 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal">¡Felicitaciones&nbsp;{!Opportunity.Name} !<o:p></o:p></p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Tu solicitud ha sido radicada con éxito. En máximo 2 días
+hábiles te daremos tu respuesta definitiva.<o:p></o:p></p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal">Para cualquier inquietud no dudes en contactar a <o:p></o:p></p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal" style="margin-left:35.4pt">Asesor:&nbsp;{!Opportunity.OwnerFullName}<o:p></o:p></p>
+
+<p class="MsoNormal" style="margin-left:35.4pt">Teléfono:&nbsp;{!Opportunity.OwnerPhone}<o:p></o:p></p>
+
+<p class="MsoNormal" style="margin-left:35.4pt">WhatsApp:&nbsp;{!Opportunity.Owner_movil__c}<o:p></o:p></p>
+
+<p class="MsoNormal" style="margin-left:35.4pt">Email:&nbsp;{!Opportunity.OwnerEmail}</p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal" style="margin-left:35.4pt"><br></p><p class="MsoNormal">Saludos,<o:p></o:p></p><p class="MsoNormal">Credifamilia compañía de financiamiento S.A.<o:p></o:p></p><p class="MsoNormal" style="margin-left:35.4pt">
+
+
+
+</p>www.credifamilia.com]]></td>
+</tr>
+</table>

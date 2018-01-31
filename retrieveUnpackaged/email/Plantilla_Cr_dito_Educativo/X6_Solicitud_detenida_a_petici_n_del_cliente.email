@@ -1,0 +1,30 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[Estimado(a)&nbsp; {!Opportunity.Name}<div><br></div><div><br>
+
+<p class="MsoNormal"><span lang="ES-CO">Tu
+información ha sido revisada, y según lo que requeriste, tu solicitud de
+crédito se encuentra detenida. </span><o:p></o:p></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Gracias por
+confiar en nosotros y esperamos contactarte en una próxima oportunidad.<o:p></o:p></span></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Para
+cualquier inquietud comunícate con&nbsp;<o:p></o:p></span></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Asesor:&nbsp;{!Opportunity.OwnerFullName}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Teléfono:&nbsp;{!Opportunity.OwnerPhone}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">WhatsApp:&nbsp;{!Opportunity.Owner_movil__c}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Email:&nbsp;{!Opportunity.OwnerEmail}<o:p></o:p></span></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p>
+
+<p class="MsoNormal">Saludos,<o:p></o:p></p>
+
+<p class="MsoNormal">Credifamilia compañía de financiamiento S.A.<o:p></o:p></p>
+
+<p class="MsoNormal"><a href="http://www.credifamilia.com/">WWW.CREDIFAMILIA.COM</a><o:p></o:p></p></div>]]></td>
+</tr>
+</table>

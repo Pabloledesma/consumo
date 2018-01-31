@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Prevalidador</members>
+        <members>Prevalidador_tst</members>
+        <members>WSProcesadorPrevalidador</members>
+        <members>WSProcesadorPrevalidador_tst</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>fosyga_cuenta</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Lead.Celular_Asesor_Global__c</members>
+        <members>Lead.Codigo_del_asesor__c</members>
+        <members>Lead.Email_asesor_global__c</members>
+        <members>Lead.Monto_solicitado__c</members>
+        <members>Lead.Nombre_Asesor_Global__c</members>
+        <members>Lead.Plazo__c</members>
+        <members>Lead.Valor_de_la_poliza__c</members>
+        <members>Lead.Valor_del_credito__c</members>
+        <members>Opportunity.Celular_Asesor_Global__c</members>
+        <members>Opportunity.Codigo_del_asesor__c</members>
+        <members>Opportunity.Nombre_Asesor_Global__c</members>
+        <members>Opportunity.Plazo__c</members>
+        <members>Opportunity.Valor_de_la_poliza__c</members>
+        <members>Opportunity.Valor_del_credito__c</members>
+        <members>Resultado_Prevalidador__c.Cifin__c</members>
+        <members>Resultado_Prevalidador__c.Cliente__c</members>
+        <members>Resultado_Prevalidador__c.Credito_solicitado__c</members>
+        <members>Resultado_Prevalidador__c.Datacredito__c</members>
+        <members>Resultado_Prevalidador__c.Disponble_monto_solicitado__c</members>
+        <members>Resultado_Prevalidador__c.Disponible_LTV_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Disponible_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Disponible_sin_GF__c</members>
+        <members>Resultado_Prevalidador__c.Endeudamiento__c</members>
+        <members>Resultado_Prevalidador__c.Endeudamiento_financiero_prevalidado__c</members>
+        <members>Resultado_Prevalidador__c.Fecha_de_prevalidacion__c</members>
+        <members>Resultado_Prevalidador__c.Fecha_hora_consulta_en_listas__c</members>
+        <members>Resultado_Prevalidador__c.LTV_Prevalidado__c</members>
+        <members>Resultado_Prevalidador__c.LogRespuesta__c</members>
+        <members>Resultado_Prevalidador__c.Log_Error__c</members>
+        <members>Resultado_Prevalidador__c.MAX_cuota_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Max_credito_LTV__c</members>
+        <members>Resultado_Prevalidador__c.Max_credito_posible_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Max_credito_posible_sin_GF__c</members>
+        <members>Resultado_Prevalidador__c.Monto_sugerido_preaprobado__c</members>
+        <members>Resultado_Prevalidador__c.Moras_en_CIFIN__c</members>
+        <members>Resultado_Prevalidador__c.Moras_en_Datacredito__c</members>
+        <members>Resultado_Prevalidador__c.No_Consulta__c</members>
+        <members>Resultado_Prevalidador__c.No_de_creditos_vigentes__c</members>
+        <members>Resultado_Prevalidador__c.No_de_tarjetas_vigentes__c</members>
+        <members>Resultado_Prevalidador__c.Numero_de_consultas__c</members>
+        <members>Resultado_Prevalidador__c.Observaciones__c</members>
+        <members>Resultado_Prevalidador__c.Oportunidad__c</members>
+        <members>Resultado_Prevalidador__c.PDFs_Generados__c</members>
+        <members>Resultado_Prevalidador__c.Plazo__c</members>
+        <members>Resultado_Prevalidador__c.Porcentaje_de_Financiacion__c</members>
+        <members>Resultado_Prevalidador__c.Presenta_cliente_paz_y_salvo__c</members>
+        <members>Resultado_Prevalidador__c.Relacion_LTV_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Relacion_credito_LTV__c</members>
+        <members>Resultado_Prevalidador__c.Relacion_cuota_ingreso_prevalidado__c</members>
+        <members>Resultado_Prevalidador__c.Relacion_disponible_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Relacion_disponible_sin_GF__c</members>
+        <members>Resultado_Prevalidador__c.Relacion_valor_credito__c</members>
+        <members>Resultado_Prevalidador__c.Resultado_del_Prevalidador__c</members>
+        <members>Resultado_Prevalidador__c.Score_Data__c</members>
+        <members>Resultado_Prevalidador__c.Score_de_Data__c</members>
+        <members>Resultado_Prevalidador__c.Score_interno__c</members>
+        <members>Resultado_Prevalidador__c.Tipo_Cliente__c</members>
+        <members>Resultado_Prevalidador__c.Valor_cuota__c</members>
+        <members>Resultado_Prevalidador__c.Valor_cuota_con_GF__c</members>
+        <members>Resultado_Prevalidador__c.Valor_cuota_sin_GF__c</members>
+        <members>Resultado_Prevalidador__c.Valor_cuota_solicitado__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>Datacredito__c</members>
+        <members>Lead</members>
+        <members>Opportunity</members>
+        <members>Resultado_Prevalidador__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Plantilla_Cr_dito_Educativo/X1_Cliente_Viable</members>
+        <members>Plantilla_Cr_dito_Educativo/X2_Cliente_No_viable</members>
+        <members>Plantilla_Cr_dito_Educativo/X3_Etapa_Ganada</members>
+        <members>Plantilla_Cr_dito_Educativo/X4_Solicitud_anulada_No_interesado_en_el_cr_dito</members>
+        <members>Plantilla_Cr_dito_Educativo/X5_Solicitud_de_cr_dito_anulada_por_pol_ticas</members>
+        <members>Plantilla_Cr_dito_Educativo/X6_Solicitud_detenida_a_petici_n_del_cliente</members>
+        <members>Plantilla_Cr_dito_Educativo/X7_Etapa_No_contactado_Pendiente_contacto_con_el_cliente</members>
+        <members>Plantilla_Cr_dito_Educativo/X8_Solicitud_detenida_por_politicas</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>Lead-Lead Seguro educativo</members>
+        <members>Lead-Lead Seguro educativo - Comercial</members>
+        <members>Opportunity-Hipotecario</members>
+        <members>Opportunity-Hipotecario - Perfil administradores</members>
+        <members>Opportunity-Hipotecario - Perfil auxiliares</members>
+        <members>Opportunity-Hipotecario - Perfil gerentes</members>
+        <members>Opportunity-Hipotecario con CIFIN</members>
+        <members>Opportunity-Hipotecario con consultas</members>
+        <members>Opportunity-Seguros educativos</members>
+        <members>Opportunity-Seguros educativos - Administrador</members>
+        <members>Opportunity-Seguros educativos - Coordinador Fábrica de crédito</members>
+        <members>PersonAccount-Cliente deudor</members>
+        <members>PersonAccount-Cliente deudor - Actualización de datos</members>
+        <members>PersonAccount-Cliente deudor - Perfil administradores</members>
+        <members>PersonAccount-Cliente deudor - Perfil cartera</members>
+        <members>PersonAccount-Cliente deudor - Perfil gerente de riesgos</members>
+        <members>PersonAccount-Cliente deudor - Perfil gerentes</members>
+        <members>PersonAccount-Convenio - Perfil administradores</members>
+        <members>Resultado_Prevalidador__c-Seguro educativo</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>LeadConvertSettings</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <members>Lead</members>
+        <members>Opportunity</members>
+        <members>Resultado_Prevalidador__c</members>
+        <name>Workflow</name>
+    </types>
+    <version>39.0</version>
+</Package>

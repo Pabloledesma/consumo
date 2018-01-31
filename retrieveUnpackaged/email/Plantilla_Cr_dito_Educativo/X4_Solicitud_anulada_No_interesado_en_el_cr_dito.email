@@ -1,0 +1,25 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<br>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Estimado(a) {!Opportunity.Name},</p><p class="MsoNormal"><br></p><p class="MsoNormal"><br></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Tu
+información ha sido revisada, y según lo que requeriste, tu solicitud de
+crédito se encuentra finalizada. </span><o:p></o:p></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p>
+
+<p class="MsoNormal"><span lang="ES-CO">Gracias por
+confiar en nosotros y esperamos contactarte en una próxima oportunidad.</span><o:p></o:p></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p><p class="MsoNormal"><span lang="ES-CO"><br></span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Saludos,<o:p></o:p></p>
+
+<p class="MsoNormal">Credifamilia compañía de financiamiento S.A.<o:p></o:p></p>
+
+<p class="MsoNormal">www.credifamilia.com<o:p></o:p></p>]]></td>
+</tr>
+</table>

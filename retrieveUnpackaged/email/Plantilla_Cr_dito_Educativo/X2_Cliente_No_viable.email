@@ -1,0 +1,25 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Arial, sans-serif" style="color: rgb(0, 0, 0); font-family: arial;">Estimado(a)&nbsp;</font><font face="Arial, sans-serif">{!Lead.FirstName}</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoNormal" style="font-size: 12pt;"><br></p><p class="MsoNormal" style="font-size: 12pt;"><br></p><p class="MsoNormal" style="">Tu información ha sido verificada y en el momento no cumples
+con las condiciones necesarias para acceder a un crédito de seguro educativo. <o:p></o:p></p><p class="MsoNormal" style=""><br></p>
+
+<p class="MsoNormal" style="">Para obtener tu crédito para seguro educativo, puedes
+modificar tu información inicial si crees que ingresaste algún dato de manera errónea,
+de lo contrario, un asesor de Credifamilia se comunicará contigo.&nbsp;<span style="font-size: 12pt;"><o:p></o:p></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<p class="MsoNormal">Saludos,<o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Credifamilia compañía de financiamiento S.A.<o:p></o:p></p>
+
+<p class="MsoNormal"><a href="http://www.credifamilia.com/">w</a>ww.credifamilia.com<o:p></o:p></p>]]></td>
+</tr>
+</table>
