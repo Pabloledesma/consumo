@@ -175,8 +175,12 @@
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Seguro educativo</value>
+        </criteriaItems>
         <description>Actualiza el tipo de registro dependiendo la respuesta</description>
-        <formula>OR(  Disponible_con_GF__c &gt; 0,  Relacion_disponible_con_GF__c &lt;&gt; 0,   Disponible_sin_GF__c &gt; 0 )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -187,9 +191,9 @@
         </actions>
         <active>true</active>
         <criteriaItems>
-            <field>Resultado_Prevalidador__c.Disponible_con_GF__c</field>
+            <field>Opportunity.RecordTypeId</field>
             <operation>equals</operation>
-            <value>0</value>
+            <value>Hipotecario</value>
         </criteriaItems>
         <description>Actualiza el tipo de registro según la respuesta</description>
         <triggerType>onCreateOnly</triggerType>
@@ -197,12 +201,14 @@
     <rules>
         <fullName>RP006_Criterios_de_Aprobacion</fullName>
         <actions>
-            <name>Aprobar_credito</name>
+            <name>Negar_resultado</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Si alguno de estos criterios se cumple el resultado del prevalidador es viable</description>
-        <formula>AND(   RecordType.Name = &apos;Seguro Educativo&apos;,   OR(    Relacion_disponible_con_GF__c &gt; 0,    Oportunidad__r.Valor_del_credito__c &lt;= Max_credito_LTV__c,    Observaciones__c = &apos;EC-01: Espere un momento mientras se restablece la conexion de cliente CIFIN&apos;    ) )</formula>
+        <formula>AND(   RecordType.Name = &apos;Seguro Educativo&apos;, 
+
+ OR(    Relacion_disponible_con_GF__c &gt; 0,Max_credito_LTV__c  &gt;  Max_credito_posible_con_GF__c  ,    Observaciones__c = &apos;EC-01: Espere un momento mientras se restablece la conexion de cliente CIFIN&apos;    ) )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>
@@ -211,7 +217,7 @@
             <name>Negar_resultado</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Si el tipo de registro es seguro educativo y la relación disponible con gastos financieros es menor o igual a cero el resultado del prevalidador es no viable</description>
         <formula>AND(  RecordType.Name = &apos;Seguro Educativo&apos;,  Relacion_disponible_con_GF__c &lt;= 0 )</formula>
         <triggerType>onCreateOnly</triggerType>

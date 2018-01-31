@@ -716,7 +716,7 @@
             <name>CD019_Actualiza_el_estado_del_candidato</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <description>Si el propietario del candidato no es un asesor, el estado debe ser &apos;Nuevo&apos;</description>
         <formula>AND(  ISPICKVAL( Status, &quot;Asignado&quot; ),  Owner:User.Profile.Name &lt;&gt; &quot;Asesor comercial canal digital&quot;,  Owner:User.Profile.Name &lt;&gt; &quot;Asesor comercial seguro educativo&quot;,  Owner:User.Profile.Name &lt;&gt; &quot;Auxiliar canal digital&quot;,  Owner:User.Profile.Name &lt;&gt; &quot;Auxiliar comercial&quot; )</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>

@@ -95,6 +95,10 @@
         <name>EmailTemplate</name>
     </types>
     <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
+    <types>
         <members>Lead-Lead Seguro educativo</members>
         <members>Lead-Lead Seguro educativo - Comercial</members>
         <members>Opportunity-Hipotecario</members>

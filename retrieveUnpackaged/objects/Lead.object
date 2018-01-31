@@ -2207,7 +2207,9 @@
     <fields>
         <fullName>Valor_de_vivienda__c</fullName>
         <externalId>false</externalId>
-        <label>Valor de vivienda</label>
+        <inlineHelpText>Hipotecario: Valor del inmueble
+Seguro educativo: Valor del seguro</inlineHelpText>
+        <label>Valor del producto</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -2217,6 +2219,7 @@
     </fields>
     <fields>
         <fullName>Valor_del_credito__c</fullName>
+        <description>Valor preaprobado.</description>
         <externalId>false</externalId>
         <label>Valor del crédito</label>
         <precision>16</precision>

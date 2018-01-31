@@ -64,8 +64,6 @@ global class WSProcesadorPrevalidador {
 			system.debug(e);
 			return;
 		}
-	
-		System.debug('WSProcesadorPrevalidador->idOportunidad: ' + idOportunidad);
 
 		// Consultar datos de la oportunidad
 		List<Opportunity> lstOportunidades = [
@@ -74,7 +72,7 @@ global class WSProcesadorPrevalidador {
 				Tipo_de_persona__c,
 				AccountId
 			FROM Opportunity
-			WHERE id =:idOportunidad
+			WHERE id =: idOportunidad
 		];
 
 		Opportunity opp = lstOportunidades[0];
@@ -121,9 +119,10 @@ global class WSProcesadorPrevalidador {
 
 		// Procesar datos que solo vienen cuando es una consulta interna
 		if (esConsultaInterna) {
-			//System.debug('Es consulta interna...');
+			
 			try {
-
+							
+				
 				// Construir objeto con respuesta
 				Resultado_Prevalidador__c objRespuesta;
 				objRespuesta = new Resultado_Prevalidador__c();
@@ -131,20 +130,41 @@ global class WSProcesadorPrevalidador {
 		 		objRespuesta.Tipo_Cliente__c = tipoCliente; 
 		 		objRespuesta.Cliente__c = idCuenta; // cuenta.Id;
 		 		objRespuesta.Resultado_del_Prevalidador__c = resultadoPrevalidador;
-		 		objRespuesta.LTV_Prevalidado__c = LTVPrevalidado == '' ? null : (Decimal.valueOf(LTVPrevalidado) * 100);
 		 		objRespuesta.Relacion_cuota_ingreso_prevalidado__c = relacionCuotaIngreso == '' ? null : (Decimal.valueOf(relacionCuotaIngreso) * 100);
 		 		objRespuesta.Monto_sugerido_preaprobado__c = montoSugeridoPreaprobado == '' ? null : Decimal.valueOf(montoSugeridoPreaprobado);
 		 		objRespuesta.Score_interno__c = scoreInterno == '' ? null : Double.valueOf(scoreInterno);
 		 		objRespuesta.Endeudamiento_financiero_prevalidado__c = endeudamientoFinanciero == '' ? null : (Decimal.valueOf(endeudamientoFinanciero) * 100);
 				objRespuesta.Numero_de_consultas__c = numConsultas == '' ? null : Double.valueOf(numConsultas);
-				System.debug('Resultado_del_Prevalidador__c: ' + resultadoPrevalidador);
-				System.debug('Observaciones__c: ' + Observaciones);
 				objRespuesta.No_de_tarjetas_vigentes__c = numTarjetasVigentes == '' ? null : Double.valueOf(numTarjetasVigentes);
 				objRespuesta.No_de_creditos_vigentes__c = numCreditosVigentes == '' ? null : Double.valueOf(numCreditosVigentes);
 				objRespuesta.Moras_en_Datacredito__c = numMorasDatacredito == '' ? null : Double.valueOf(numMorasDatacredito);
 				objRespuesta.Moras_en_CIFIN__c = numMorasCIFIN == '' ? null : Double.valueOf(numMorasCIFIN);
 				objRespuesta.Observaciones__c = observaciones;
-				objRespuesta.LogRespuesta__c = RespuestaCliente; 
+				objRespuesta.LogRespuesta__c = RespuestaCliente;
+				
+				//Variables de seguro educativo
+				system.debug('disponibleconGF: ' + informeGeneral.getAttributeValue('disponibleConGF', ''));
+				objRespuesta.Disponible_con_GF__c = informeGeneral.getAttributeValue('disponibleConGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('disponibleConGF', '')) : 0;
+				if(objRespuesta.Disponible_con_GF__c > 0){
+					objRespuesta.Porcentaje_de_Financiacion__c = (Decimal.valueOf(LTVPrevalidado) * 100);
+				} else {
+					objRespuesta.LTV_Prevalidado__c = LTVPrevalidado == '' ? null : (Decimal.valueOf(LTVPrevalidado) * 100);
+				}
+				objRespuesta.Disponible_sin_GF__c = informeGeneral.getAttributeValue('disponibleSinGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('disponibleSinGF', '')) : 0;
+				objRespuesta.Valor_cuota__c = informeGeneral.getAttributeValue('valorCuota', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('valorCuota', '')) : 0;
+				objRespuesta.Valor_cuota_con_GF__c = informeGeneral.getAttributeValue('valorCuotaConGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('valorCuotaConGF', '')) : 0;
+				objRespuesta.Valor_cuota_sin_GF__c = informeGeneral.getAttributeValue('valorCuotaSinGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('valorCuotaSinGF', '')) : 0;
+				objRespuesta.Relacion_disponible_con_GF__c = informeGeneral.getAttributeValue('RelacionDisponibleConGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('RelacionDisponibleConGF', '')) : 0; 
+				objRespuesta.Relacion_disponible_sin_GF__c = informeGeneral.getAttributeValue('RelacionDisponibleSinGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('RelacionDisponibleSinGF', '')) : 0;
+				objRespuesta.Relacion_valor_credito__c = informeGeneral.getAttributeValue('RelacionValorCredito', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('RelacionValorCredito', '')) : 0;
+				objRespuesta.Relacion_LTV_con_GF__c = informeGeneral.getAttributeValue('RelacionLTVConGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('RelacionLTVConGF', '')) : 0;
+				objRespuesta.Max_cuota_con_GF__c = informeGeneral.getAttributeValue('maximaCuotaPosibleConGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('maximaCuotaPosibleConGF', '')) : 0;
+				objRespuesta.Max_credito_posible_con_GF__c = informeGeneral.getAttributeValue('maximoCreditoPosibleConGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('maximoCreditoPosibleConGF', '')) : 0;
+				objRespuesta.Max_credito_posible_sin_GF__c = informeGeneral.getAttributeValue('maximoCreditoPosibleSinGF', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('maximoCreditoPosibleSinGF', '')) : 0;
+				objRespuesta.Max_credito_LTV__c = informeGeneral.getAttributeValue('maximoCreditoLTV', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('maximoCreditoLTV', '')) : 0;
+				objRespuesta.Endeudamiento__c = informeGeneral.getAttributeValue('gastosFinancieros', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('gastosFinancieros', '')) : 0;
+				objRespuesta.Valor_cuota_solicitado__c = informeGeneral.getAttributeValue('valorCuotaSolicitado', '') != '' ? Integer.valueOf(informeGeneral.getAttributeValue('valorCuotaSolicitado', '')) : 0;
+				
 				
 				Integer Anyo, Mes, Dia, Hora, Minutos, Segundos;
 				if (fechaConsultaListas.length() > 0) {
@@ -390,7 +410,8 @@ global class WSProcesadorPrevalidador {
 	 			dato6 = EliminarSeparadores(datosRegistro[5]);
 	 			dato7 = EliminarSeparadores(datosRegistro[6]);
 	 			dato8 = EliminarSeparadores(datosRegistro[7]);
-	 				
+	 			
+	 			
 	 			objDatosSectores = new Datacredito_Sectores__c(
 	 					Datacredito__c = datacreditoId,
  						Nombre__c = dato1,
@@ -402,12 +423,18 @@ global class WSProcesadorPrevalidador {
  						Total_como_principal__c = dato7,
  						Total_como_codeudor_y_otros__c = dato8
  				);
+ 					
 	 			lstDatosSectores.Add(objDatosSectores);
 	 		}
 	 	}
 	 	
 	 	if(!lstDatosSectores.isEmpty())	
-	 		insert lstDatosSectores;
+	 		try {
+	 			insert lstDatosSectores;
+	 		} catch (Exception e) {
+	 			system.debug(e.getMessage());
+	 			system.debug(lstDatosSectores);
+	 		}
     }
     
     @future
@@ -425,9 +452,9 @@ global class WSProcesadorPrevalidador {
 	 		doc.load(RespuestaCliente);
 	 		Dom.Xmlnode raiz = doc.getRootElement();
 	 		informe = raiz.getChildElement('Informe', null);
-	 		system.debug('informe: ' + informe); 		
+	 		//system.debug('informe: ' + informe); 		
 	 		for(Dom.XmlNode child : informe.getChildElements()){
-	 			system.debug(child.getName());
+	 			//system.debug(child.getName());
 	 			if(child.getName() == 'InformeGeneral'){
 	 				informeGeneral = child;
 					break;	 			

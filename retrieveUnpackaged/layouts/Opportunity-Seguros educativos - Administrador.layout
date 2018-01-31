@@ -261,7 +261,6 @@
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <relatedLists>
-        <excludeButtons>New</excludeButtons>
         <fields>NAME</fields>
         <fields>No_Consulta__c</fields>
         <fields>Tipo_Cliente__c</fields>

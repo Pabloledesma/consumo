@@ -2256,6 +2256,8 @@
     <fields>
         <fullName>Valor_del_inmueble__c</fullName>
         <externalId>false</externalId>
+        <inlineHelpText>Hipotecario: Valor del inmueble
+Seguro educativo: Valor del seguro</inlineHelpText>
         <label>Valor del producto</label>
         <precision>18</precision>
         <required>false</required>
@@ -4616,7 +4618,7 @@
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Creditos_leasing_y_mejoramientos</fullName>
-        <active>true</active>
+        <active>false</active>
         <businessProcess>Créditos%2C leasing%2C mejoramiento de vivienda</businessProcess>
         <label>Créditos, leasing y mejoramientos de vivienda</label>
         <picklistValues>

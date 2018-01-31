@@ -2019,11 +2019,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Opportunity.Creditos_leasing_y_mejoramientos</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
         <recordType>Opportunity.Cuenta_de_ahorros_CDT</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

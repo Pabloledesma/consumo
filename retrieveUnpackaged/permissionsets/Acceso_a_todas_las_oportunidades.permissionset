@@ -1946,10 +1946,6 @@
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <recordType>Opportunity.Creditos_leasing_y_mejoramientos</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
         <recordType>Opportunity.Cuenta_de_ahorros_CDT</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>

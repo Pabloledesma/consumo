@@ -1188,7 +1188,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Lead.Valor_del_credito__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1923,10 +1923,6 @@
         <recordType>Opportunity.Hipotecario</recordType>
     </layoutAssignments>
     <layoutAssignments>
-        <layout>Opportunity-Seguros educativos</layout>
-        <recordType>Opportunity.Seguro_educativo</recordType>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>PersonAccount-Cliente deudor - Perfil gerente de riesgos</layout>
         <recordType>PersonAccount.Cliente_deudor</recordType>
     </layoutAssignments>
@@ -1971,11 +1967,11 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Resultado_Prevalidador__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -2011,11 +2007,6 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Lead.Lead_Seguro_Educativo</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Opportunity.Creditos_leasing_y_mejoramientos</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -2065,13 +2056,14 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>true</default>
+        <personAccountDefault>true</personAccountDefault>
         <recordType>Resultado_Prevalidador__c.Hipotecario</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Resultado_Prevalidador__c.Seguro_Educativo</recordType>
-        <visible>false</visible>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>

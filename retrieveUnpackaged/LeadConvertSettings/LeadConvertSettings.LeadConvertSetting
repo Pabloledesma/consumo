@@ -4,14 +4,6 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
-            <inputField>Tipo_de_documento__c</inputField>
-            <outputField>Tipo_de_documento__c</outputField>
-        </mappingFields>
-        <mappingFields>
-            <inputField>Tipo_de_ocupacion__c</inputField>
-            <outputField>Tipo_de_ocupacion__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Antiguedad_en_la_actividad__c</inputField>
             <outputField>Antiguedad_en_la_actividad__c</outputField>
         </mappingFields>
@@ -83,6 +75,14 @@
             <inputField>Tipo_de_contrato__c</inputField>
             <outputField>Tipo_de_contrato__c</outputField>
         </mappingFields>
+        <mappingFields>
+            <inputField>Tipo_de_documento__c</inputField>
+            <outputField>Tipo_de_documento__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Tipo_de_ocupacion__c</inputField>
+            <outputField>Tipo_de_ocupacion__c</outputField>
+        </mappingFields>
         <outputObject>Account</outputObject>
     </objectMapping>
     <objectMapping>
@@ -112,16 +112,16 @@
             <outputField>Keyword__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>Monto_solicitado__c</inputField>
-            <outputField>Valor_del_credito__c</outputField>
-        </mappingFields>
-        <mappingFields>
             <inputField>Nombre_Asesor_Global__c</inputField>
             <outputField>Nombre_Asesor_Global__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Observaciones_estado_consulta__c</inputField>
             <outputField>Observaciones_estado_consulta__c</outputField>
+        </mappingFields>
+        <mappingFields>
+            <inputField>Origen__c</inputField>
+            <outputField>Origen__c</outputField>
         </mappingFields>
         <mappingFields>
             <inputField>Origen_real__c</inputField>
@@ -148,12 +148,12 @@
             <outputField>Tipo_de_vivienda__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>Valor_de_la_poliza__c</inputField>
-            <outputField>Valor_del_inmueble__c</outputField>
+            <inputField>Valor_del_credito__c</inputField>
+            <outputField>Valor_del_credito__c</outputField>
         </mappingFields>
         <mappingFields>
-            <inputField>Origen__c</inputField>
-            <outputField>Origen__c</outputField>
+            <inputField>Valor_de_vivienda__c</inputField>
+            <outputField>Valor_del_inmueble__c</outputField>
         </mappingFields>
         <outputObject>Opportunity</outputObject>
     </objectMapping>

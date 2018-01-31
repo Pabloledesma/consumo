@@ -76,8 +76,8 @@ global class Prevalidador {
         String errorOportunidad = 'Faltan datos de la oportunidad necesarios para realizar la consulta. Profavor verifique los siguientes campos:\n\n';
         if(!lstOportunidades.isEmpty()){
             Opportunity opp = lstOportunidades[0];
-            // Validar datos de la oportunidad para hipotecario
-	
+            // Validar datos de la oportunidad
+            
             if (String.isBlank(opp.Tipo_de_producto__c) ||
                 String.isBlank(opp.Estado_Consulta__c ) ||
                 (String.isBlank(String.valueOf(opp.Numero_de_vivienda__c)) && opp.Tipo_de_producto__c != 'Seguro Educativo') ||
@@ -94,13 +94,12 @@ global class Prevalidador {
                	if(String.isBlank(opp.Estado_Consulta__c )) errorOportunidad += '-> Estado consulta\n';
                	if(String.isBlank(String.valueOf(opp.Numero_de_vivienda__c)) && opp.Tipo_de_producto__c != 'Seguro Educativo') errorOportunidad += '-> Numero de vivienda\n';
                	if(Integer.valueOf(opp.Ingresos_Familiares__c) == 0 || opp.Ingresos_familiares__c == null) errorOportunidad += '-> Ingresos familiares\n';
-               	if(Integer.valueOf(opp.Valor_del_inmueble__c) == 0 || opp.Valor_del_inmueble__c == null) errorOportunidad += '-> Valor del inmueble\n';
+               	if(Integer.valueOf(opp.Valor_del_inmueble__c) == 0 || opp.Valor_del_inmueble__c == null) errorOportunidad += '-> Valor del producto\n';
                	if(Integer.valueOf(opp.Amount) == 0 || opp.Amount == null) errorOportunidad += '-> Valor del crédito\n';
                	if(String.isBlank(opp.Tipo_de_vivienda__c) && opp.Tipo_de_producto__c != 'Seguro Educativo') errorOportunidad += '-> Tipo de vivienda';
                	
                 return errorOportunidad;
         	}
-            
 
             // Buscar datos del deudor (cuenta de la oportunidad)
             List<Account> lstCuentas = [
@@ -237,9 +236,17 @@ global class Prevalidador {
             return 'Ya hay una consulta en proceso. Por favor espere la respuesta para realizar otra.';
         }
         else {
-	        //opp.Consultas_realizadas__c = opp.Consultas_realizadas__c + 1;
+        	
             opp.Estado_Consulta__c = 'Esperando respuesta Consulta Interna';
-            update opp;
+            
+            // Crear una clase para tratar las excepciones
+            try {
+            	update opp;
+            } catch (Exception e) {
+            	String error = e.getMessage();
+            	return procesarMensajeDeError(error);
+            }
+            
             return 'ok';
         }
     }
@@ -260,7 +267,12 @@ global class Prevalidador {
         }
         else {
             opp.Estado_Consulta__c = 'Esperando respuesta Datacrédito';
-            update opp;
+            try {
+            	update opp;
+            } catch (Exception e) {
+            	String error = e.getMessage();
+            	return procesarMensajeDeError(error);
+            }
             return 'ok';
         }
     }
@@ -281,7 +293,12 @@ global class Prevalidador {
         }
         else {
             opp.Estado_Consulta__c = 'Esperando respuesta CIFIN';
-            update opp;
+            try {
+            	update opp;
+            } catch (Exception e) {
+            	String error = e.getMessage();
+            	return procesarMensajeDeError(error);
+            }
             return 'ok';
         }
     }
@@ -467,9 +484,17 @@ global class Prevalidador {
     
     public static HttpRequest ConstruirRequestConsultaInterna(Id idOportunidad) {
 
+        RecordType rtSeguroEducativo = [
+        	select 
+        		Id,
+        		Name
+        	from RecordType
+        	where sObjectType = 'Opportunity' and Name = 'Seguro educativo'
+        ];
+        
         // Buscar datos de la oportunidad
         List<Opportunity> lstOportunidades = [
-            SELECT Amount, Tipo_de_producto__c, Valor_del_inmueble__c, AccountId, OwnerId, Tipo_de_vivienda__c,
+            SELECT RecordTypeId, Amount, Tipo_de_producto__c, Valor_del_inmueble__c, AccountId, OwnerId, Tipo_de_vivienda__c,
             Codeudor_1__c, Codeudor_2__c, Codeudor_3__c, Numero_de_vivienda__c, Ingresos_Familiares__c, Canal_de_atencion__c, 
             Aporta_Ingresos_Codeudor_1__c,
             Aporta_Ingresos_Codeudor_2__c,
@@ -504,16 +529,21 @@ global class Prevalidador {
         dom.Xmlnode nodoInforme = nodoInformes.addChildElement('Informe', '', '');
         nodoInforme.setAttribute('idOportunidad', opp.Id);
         nodoInforme.setAttribute('tipoVivienda', opp.Tipo_de_vivienda__c == null ? '' : opp.Tipo_de_vivienda__c);
-        System.debug('prevalidador -> opp.Amount: ' + opp.Amount);
+        //System.debug('prevalidador -> opp.Amount: ' + opp.Amount);
         nodoInforme.setAttribute('valorCredito', String.valueOf(opp.Amount));
         nodoInforme.setAttribute('ingresosFamiliares', opp.Ingresos_Familiares__c == null ? '' : String.valueOf(opp.Ingresos_Familiares__c));
         nodoInforme.setAttribute('tipoProducto', EliminarCaracteresEspeciales(opp.Tipo_de_producto__c));
         nodoInforme.setAttribute('valorInmueble', String.valueOf(opp.Valor_del_inmueble__c));
-        nodoInforme.setAttribute('numeroVivienda', String.valueOf(opp.Numero_de_vivienda__c));
+        nodoInforme.setAttribute('numeroVivienda', opp.Numero_de_vivienda__c == null ? '' : String.valueOf(opp.Numero_de_vivienda__c));
         nodoInforme.setAttribute('correoTramitador', usuario.Email);
         nodoInforme.setAttribute('nombreTramitador', usuario.Name);
         nodoInforme.setAttribute('fechaValidacion', '');
         nodoInforme.setAttribute('canalAtencion',  opp.Canal_de_atencion__c == null ? '' : opp.Canal_de_atencion__c);
+        
+        if(rtSeguroEducativo.Id == opp.RecordTypeId){
+        	nodoInforme.setAttribute('tipoCredito', '1');
+        }
+        
         // Construir nodo del deudor
         dom.Xmlnode nodoPrincipal = nodoInforme.addChildElement('Principal', '', '');
         nodoPrincipal.setAttribute('nombre', EliminarCaracteresEspeciales(cuenta.FirstName));
@@ -531,6 +561,8 @@ global class Prevalidador {
         nodoPrincipal.setAttribute('edad', String.valueOf(cuenta.Edad__c));
         nodoPrincipal.setAttribute('actividadEconomica', cuenta.Actividad_economica__c == null ? '': cuenta.Actividad_economica__c);
         nodoPrincipal.setAttribute('ingresosMensuales', opp.Ingresos_Familiares__c == null ? '' : String.valueOf(opp.Ingresos_Familiares__c));
+        
+      
         
         // Construir nodos de los codeudores
         if (opp.Codeudor_1__c != null) {
@@ -555,7 +587,7 @@ global class Prevalidador {
         req.setHeader('SOAPAction', '');
         req.setHeader('Host', 'testwsprevalidador.credifamilia.com');
         req.setHeader('Connection', 'Keep-Alive');
-        system.debug('soap: ' + SOAP);
+        //system.debug('soap: ' + SOAP);
         req.setBody(SOAP);
         
         return req;
@@ -589,7 +621,7 @@ global class Prevalidador {
         HttpRequest req = ConstruirRequestConsultaDatacredito(idOportunidad);
         Http http = new Http();
         HttpResponse resp = http.send(req);
-        system.debug(resp);
+        //system.debug(resp);
     }
 
     public static HttpRequest ConstruirRequestConsultaDatacredito(Id idOportunidad) {
@@ -599,7 +631,7 @@ global class Prevalidador {
         
         String SOAP = ConstruirSOAP(2, '', idOportunidad);
         HttpRequest req = new HttpRequest();
-        system.debug('URLWSPrevalidador: ' + URLWSPrevalidador);
+        //system.debug('URLWSPrevalidador: ' + URLWSPrevalidador);
         req.setEndpoint(URLWSPrevalidador);
         req.setMethod('POST');
         req.setHeader('Content-Type', 'text/xml;charset=UTF-8');
@@ -607,7 +639,7 @@ global class Prevalidador {
         req.setHeader('Host', 'wsprevalidador.credifamilia.com');
         req.setHeader('Connection', 'Keep-Alive');
         req.setBody(SOAP);
-        system.debug('SOAP: ' + SOAP);
+        //system.debug('SOAP: ' + SOAP);
         return req;
     }
     
@@ -693,6 +725,16 @@ global class Prevalidador {
     
     public static String EliminarCaracteresEspeciales(String cadena) {
         return cadena.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u'); 
+    }
+    
+    public static String procesarMensajeDeError(String error){
+    	Integer totalSize = error.length();
+    	Integer point = error.indexOf('CUSTOM_VALIDATION_EXCEPTION');
+    	if(point > 0){
+    		return error.right(point + 1);
+    	} else {
+    		return error;
+    	}
     }
 
 }

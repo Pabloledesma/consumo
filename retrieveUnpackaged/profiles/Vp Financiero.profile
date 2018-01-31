@@ -1188,7 +1188,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Lead.Valor_del_credito__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2002,11 +2002,6 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Lead.Lead_Seguro_Educativo</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Opportunity.Creditos_leasing_y_mejoramientos</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>

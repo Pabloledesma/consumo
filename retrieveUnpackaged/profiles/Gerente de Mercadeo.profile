@@ -2015,11 +2015,6 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-        <recordType>Opportunity.Creditos_leasing_y_mejoramientos</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
         <recordType>Opportunity.Cuenta_de_ahorros_CDT</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>

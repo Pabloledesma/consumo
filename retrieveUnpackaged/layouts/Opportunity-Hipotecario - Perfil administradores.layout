@@ -90,8 +90,8 @@
                 <field>Valor_del_inmueble__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Valor_del_credito__c</field>
+                <behavior>Required</behavior>
+                <field>Amount</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
