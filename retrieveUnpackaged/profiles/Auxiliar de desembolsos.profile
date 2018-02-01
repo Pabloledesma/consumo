@@ -2057,10 +2057,7 @@
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <userLicense>Force.com - App Subscription</userLicense>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ApexRestServices</name>
-    </userPermissions>
+ 
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
