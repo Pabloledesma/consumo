@@ -2009,11 +2009,7 @@
         <recordType>PersonAccount.PersonAccount</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>true</default>
-        <recordType>Radicacion_de_credito__c.Hipotecario</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
+    
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Requerimientos__c.Incidencias</recordType>
