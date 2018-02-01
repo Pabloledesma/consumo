@@ -2091,7 +2091,7 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
-  
+    
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>

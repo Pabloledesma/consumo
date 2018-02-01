@@ -7,4 +7,5 @@
     <style>freeForm</style>
     <subject>Credifamilia responde a tu solicitud de crédito</subject>
     <type>html</type>
+    <uiType>Aloha</uiType>
 </EmailTemplate>

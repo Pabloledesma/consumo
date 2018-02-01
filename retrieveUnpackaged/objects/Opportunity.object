@@ -831,10 +831,6 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>IqScore</fullName>
-        <trackTrending>false</trackTrending>
-    </fields>
-    <fields>
         <fullName>IsPrivate</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
