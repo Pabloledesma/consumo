@@ -12972,6 +12972,30 @@ $Profile.Id &lt;&gt; &quot;00eo0000000Tr0P&quot;,
         <errorMessage>CL-017. El documento no pudo ser expedido antes de los 18 años. Por favor corregir la fecha.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>CL018_Puntos_comas_guiones_y_numeros</fullName>
+        <active>true</active>
+        <description>Valida que en los campos lugar de expedición y lugar de nacimiento se ingrese solamente texto, no permite ingresar caracteres numéricos y comas. La longitud debe ser mayor a 3 caracteres</description>
+        <errorConditionFormula>AND(
+NOT ISBLANK(Lugar_de_expedicion__c),
+$Profile.Id &lt;&gt; &quot;00eo00000016F80&quot;, 
+
+$Profile.Id &lt;&gt; &quot;00eo0000000TuFy&quot;, 
+$Profile.Id &lt;&gt; &quot;00eo0000000Tr0P&quot;, 
+$Profile.Id &lt;&gt; &quot;00eo0000000f7LE&quot;, 
+$Profile.Id &lt;&gt; &quot;00eo0000000f7LO&quot;,
+$Profile.Id &lt;&gt; &quot;00eo00000013vGj&quot;, 
+OR(
+NOT(REGEX( Lugar_de_expedicion__c , &quot;^[A-Z a-zÑñáéíóúÁÉÍÓÚ.-üÜ]+$&quot;)),
+NOT(REGEX( Lugar_de_nacimiento__c , &quot;^[A-Z a-zÑñáéíóúÁÉÍÓÚ.-üÜ]+$&quot;)),
+NOT(REGEX( Ciudad_de_residencia__c , &quot;^[A-Z a-zÑñáéíóúÁÉÍÓÚ.-üÜ]+$&quot;)),
+LEN(Lugar_de_nacimiento__c) &lt; 3,
+LEN(Lugar_de_expedicion__c) &lt; 3,
+LEN(Ciudad_de_residencia__c) &lt; 3  
+))</errorConditionFormula>
+        <errorMessage>CL-018. No están permitidos los números y tildes invertidas en los siguientes campos:
+Lugar de expedición, Lugar de nacimiento, Ciudad de residencia</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>CL018_Valida_el_lugar_de_expedicion</fullName>
         <active>true</active>
         <description>Valida que en el campo lugar de expedición se ingrese solamente texto, no permite ingresar caracteres numéricos, ni menos de tres caracteres.</description>

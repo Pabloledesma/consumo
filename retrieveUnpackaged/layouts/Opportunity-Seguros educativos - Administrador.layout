@@ -68,7 +68,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Amount</field>
+                <field>Valor_del_credito__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -284,7 +284,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1k000000RGaX</masterLabel>
+        <masterLabel>00h3D000000HqDn</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

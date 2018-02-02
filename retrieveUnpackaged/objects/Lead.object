@@ -1616,6 +1616,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Porcentaje_de_financiaci_n__c</fullName>
+        <externalId>false</externalId>
+        <label>Porcentaje de financiación</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>8</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
         <fullName>Precio_de_la_vivienda__c</fullName>
         <externalId>false</externalId>
         <label>Precio de la vivienda</label>

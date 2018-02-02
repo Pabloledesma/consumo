@@ -1034,6 +1034,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Lead.Porcentaje_de_financiaci_n__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Lead.Precio_de_la_vivienda__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2025,7 +2030,6 @@
         <recordType>PersonAccount.PersonAccount</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
-    
     <recordTypeVisibilities>
         <default>true</default>
         <recordType>Requerimientos__c.Incidencias</recordType>
@@ -2069,7 +2073,6 @@
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>
-    
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
@@ -2186,5 +2189,4 @@
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
     </userPermissions>
-    
 </Profile>

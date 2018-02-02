@@ -7723,6 +7723,21 @@ $Profile.Id &lt;&gt; &quot;00eo0000000g2vT&quot;,
         <errorMessage>OP-019.El valor del crédito no puede menor a 10 SMLMV, ni superior a $300&apos;000.000.</errorMessage>
     </validationRules>
     <validationRules>
+        <fullName>OP020_Dar_baja_en_el_sistema</fullName>
+        <active>true</active>
+        <description>Únicamente los líderes de canal digital están autorizadas para seleccionar esta etapa.</description>
+        <errorConditionFormula>AND(
+$Profile.Id&lt;&gt;&quot;00eo0000000uvB5&quot;,
+$Profile.Id&lt;&gt;&quot;00eo0000000TUaz&quot;,
+$Profile.Id&lt;&gt;&quot;00Eo0000000Glji&quot;,
+
+ ISPICKVAL(StageName,&quot;Dar baja en el sistema&quot;) 
+
+
+)</errorConditionFormula>
+        <errorMessage>Únicamente los líderes de canal digital están autorizadas para seleccionar esta etapa.</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>OP020_Valida_oportunidad_seguro_educativ</fullName>
         <active>true</active>
         <description>Las personas del procedimiento hipotecario no pueden modificar oportunidades de tipo seguro educativo</description>

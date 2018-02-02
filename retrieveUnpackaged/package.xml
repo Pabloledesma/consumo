@@ -137,6 +137,7 @@
         <name>RecordType</name>
     </types>
     <types>
+        <members>Account</members>
         <members>Lead</members>
         <members>Opportunity</members>
         <members>Resultado_Prevalidador__c</members>

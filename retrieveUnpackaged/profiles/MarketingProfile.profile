@@ -1034,6 +1034,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Lead.Porcentaje_de_financiaci_n__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Lead.Precio_de_la_vivienda__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -2025,7 +2030,6 @@
         <recordType>PersonAccount.PersonAccount</recordType>
         <visible>false</visible>
     </recordTypeVisibilities>
-    
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Requerimientos__c.Incidencias</recordType>
@@ -2073,7 +2077,6 @@
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>
     </userPermissions>
-    
     <userPermissions>
         <enabled>true</enabled>
         <name>ApiEnabled</name>
@@ -2230,7 +2233,6 @@
         <enabled>true</enabled>
         <name>ViewHelpLink</name>
     </userPermissions>
-    
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewSetup</name>

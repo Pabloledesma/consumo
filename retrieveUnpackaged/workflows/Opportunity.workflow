@@ -1051,6 +1051,16 @@
         <protected>false</protected>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>OP002_Actualiza_el_email_del_cliente</fullName>
+        <description>Actualiza el campo cliente deudor desde el cliente a la oprtunidad.</description>
+        <field>Email_cliente_deudor__c</field>
+        <formula>Account.PersonContact.Email</formula>
+        <name>OP002.Actualiza el email del cliente</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>OP003_Actualiza_tipo_de_vivienda_NO_VIS</fullName>
         <description>Actualiza campo tipo de proceso a No Vis.</description>
         <field>Tipo_de_vivienda__c</field>
@@ -1214,6 +1224,16 @@
         <operation>Literal</operation>
         <protected>false</protected>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>OP101_Actualiza_el_campo_Tipo</fullName>
+        <description>Actualiza el campo tipo al momento de la conversión del candidato a cliente.</description>
+        <field>Tipo__c</field>
+        <literalValue>Lead pendiente por gestionar</literalValue>
+        <name>OP101 Actualiza el campo Tipo en el mome</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
     <rules>
         <fullName>OP001%2EActualizar el campo ganada</fullName>
         <actions>
@@ -1238,6 +1258,10 @@
         <fullName>OP002%2EActualizar el campo email cliente deudor</fullName>
         <actions>
             <name>OP002_Actualiza_el_Ca_email_cliente_deu</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>OP002_Actualiza_el_email_del_cliente</name>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
@@ -3178,6 +3202,20 @@
             <operation>notEqual</operation>
         </criteriaItems>
         <description>Cuando se crea una oportunidad el campo etapa se debe diligenciar en abierta.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>OP101 Actualiza el campo Tipo en el momento de la conversión</fullName>
+        <actions>
+            <name>OP101_Actualiza_el_campo_Tipo</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.Origen__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Actualiza el campo Tipo en el momento de la conversión del candidato a cliente.</description>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>

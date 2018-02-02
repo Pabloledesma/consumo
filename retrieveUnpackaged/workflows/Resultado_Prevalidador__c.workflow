@@ -206,9 +206,7 @@
         </actions>
         <active>false</active>
         <description>Si alguno de estos criterios se cumple el resultado del prevalidador es viable</description>
-        <formula>AND(   RecordType.Name = &apos;Seguro Educativo&apos;, 
-
- OR(    Relacion_disponible_con_GF__c &gt; 0,Max_credito_LTV__c  &gt;  Max_credito_posible_con_GF__c  ,    Observaciones__c = &apos;EC-01: Espere un momento mientras se restablece la conexion de cliente CIFIN&apos;    ) )</formula>
+        <formula>AND(   RecordType.Name = &apos;Seguro Educativo&apos;,    OR(    Relacion_disponible_con_GF__c &gt; 0,Max_credito_LTV__c  &gt;  Max_credito_posible_con_GF__c  ,    Observaciones__c = &apos;EC-01: Espere un momento mientras se restablece la conexion de cliente CIFIN&apos;    ) )</formula>
         <triggerType>onCreateOnly</triggerType>
     </rules>
     <rules>

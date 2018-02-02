@@ -1018,6 +1018,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Lead.Porcentaje_de_financiaci_n__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Lead.Precio_de_la_vivienda__c</field>
         <readable>false</readable>
     </fieldPermissions>
